@@ -1,0 +1,25 @@
+<header class="container">
+    <div id="head-logo"><span style="color:#eed848">Pro</span> - Book</div>
+    <div id="head-uname"><u>Hi <?php echo $_COOKIE["username"] ?></u></div>
+    <div id="head-logout">
+      <a href="/logout"><img src="/static/logout.png" alt="logout" id="icon-logout"></a>
+    </div>
+</header>
+
+<nav class="container">
+    <a href="/search">
+        <div class="nav-button <?php if($navbar === "browse") echo "nav-button-active"; ?>">
+            Browse
+        </div>
+    </a>
+    <a href="/history">
+        <div class="nav-button <?php if($navbar === "history") echo "nav-button-active"; ?>">
+            History
+        </div>
+    </a>
+    <a href="/profile">
+        <div class="nav-button last-child <?php if($navbar === "profile") echo "nav-button-active"; ?>">
+            Profile
+        </div>
+    </a>
+</nav>

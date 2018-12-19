@@ -1,0 +1,104 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Nunito;
+}
+
+.container {
+  display: flex;
+}
+
+header {
+  background: #00aeef;
+  align-items: center;
+  color: whitesmoke;
+  height: 3.7em;
+}
+
+header > div {
+  margin: auto;
+  padding-left: 0.5em;
+}
+
+#head-logo {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+#head-uname {
+  font-family: Nunito;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: 0.5em;
+}
+
+nav.container {
+  justify-content: space-around;
+  background: #0295c6;
+  font-family: Nunito;
+  font-variant: small-caps;
+  font-size: 3em;
+  color: #fdfdfd;
+}
+
+@media (min-width: 450px) {
+  #head-logo {
+    font-size: 2em;
+  }
+
+  #head-uname {
+    font-size: 1.2em;
+    margin-right: 1em;
+  }
+
+  nav.container {
+    font-size: 1.7em;
+  }
+}
+
+#head-logout {
+  background-color: #ed6708;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#icon-logout {
+  display: block;
+  width: 3em;
+  padding : 0.5em;
+  margin: auto 0;
+}
+
+nav.container a {
+  color: #fdfdfd;
+  text-decoration: initial;
+  flex: 1 0 0;
+}
+
+.nav-button {
+  padding: 0.3em;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.nav-button-active {
+  background: #ed6708;
+}
+
+nav .last-child {
+  border-right: 0;
+}
+
+.nav-button:hover {
+  background-color: #ed6708;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/edit_profile.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito">
+</head>
+
+<body>
+    <?php require "view/header.phtml"; ?>
+    <div id="profile-title"> Edit Profile</div>
+    <form name="editform" class="form-container" action="/edit" onsubmit="return validateInput()" method="post" enctype="multipart/form-data">
+        <div class="photos-container">
+            <img src=<?php echo (substr($avatar, 0, 4) != "http" ? ('/static/' . $avatar) : $avatar);?> alt="Avatar" class="circle">
+            <div class="photo-update">
+                <label for="avatar">Update Profile Picture</label>
+                <div class="form">
+                    <input type="file" id="hidden-button" name="avatar" id="avatar">
+                    <div class="form">
+                        <input type="text" id="file-name">
+                        <button type="button" onclick="submitFile()">Browse..</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="name">Name</label>
+             <input type="text" name="name" id="name" onchange="validateInput()" value="<?php echo $name;?>">
+        </div>
+        <div class="input-container">
+            <label for="address" >Address</label>
+            <textarea name="address" id="address" onchange="validateInput()" rows="6"><?php echo $address;?></textarea>
+        </div>
+        <div class="input-container">
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" onchange="validateInput()" id="phone" value=<?php echo $phone;?>>
+        </div>
+        <div class="input-container">
+            <label for="card">Credit Card</label>
+            <input type="text" name="card" id="card" onchange="validateInput()" value=<?php echo $card_number;?>>
+        </div>
+        <div class="button-container">
+          <div class="input-container">
+              <a href="/profile"><button type="button" class="button-back">Back</button></a>
+          </div>
+          <div class="input-container">
+              <button type="submit" class="button-save" id="submit">Save</button>
+              <header("")
+          </div>
+        </div>
+    </form>
+</body>
+<script src="../static/card-validation.js"></script>
+<script src="../static/edit.js"></script>
+
+
+</html>

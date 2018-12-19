@@ -1,0 +1,24 @@
+.result-item-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.result-item {
+    margin-bottom: 3em;
+}
+
+.result-item-rating {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-item-title .detail {
+    font-size: 1em;
+    color: #555555;
+    font-weight: bold;
+}
+
+.result-item-button > a > button {
+    border-radius: 2px;
+}

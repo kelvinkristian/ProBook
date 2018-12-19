@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Gabriel B.R
+ * Email: gabriel.bentara@gmail.com
+ * Date: 23/10/18
+ * Time: 6:37 AM
+ */
+?>
+
+<?php if (isset($success)) : ?>
+<div style="padding: 1em; background:#7befb2; width: 100%; color:white;">
+    <?php echo $success?>
+</div>
+<?php endif; ?>
+
+<?php if (isset($error)) : ?>
+    <div style="padding: 1em; background:#e26a6a; width: 100%; color: white;">
+        <?php echo $error?>
+    </div>
+<?php endif; ?>

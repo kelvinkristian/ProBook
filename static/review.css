@@ -1,0 +1,103 @@
+body, html {
+    width: 100%;
+}
+
+.review-container {
+    display: flex;
+    padding: 2em;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.title {
+    display: flex;
+    flex-grow: 3;
+    flex-basis: 0;
+    color: orangered;
+    font-size: 3em;
+    font-weight: bold;
+    flex-direction: column;
+}
+
+.title .subtitle {
+    color: #555555;
+    font-size: 0.33em;
+}
+
+.book-icon {
+    align-self: flex-end;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.book-icon img {
+    max-height: 10em;
+    width: auto;
+}
+
+.review-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 2em;
+}
+
+.second-title {
+    color: #13364a;
+    font-weight: bold;
+    font-size: 2em;
+    align-self: flex-start;
+    margin-bottom: 0.7em;
+}
+
+.review-container .stars {
+    align-self: center;
+    justify-self: center;
+}
+
+.review-container .stars img {
+    max-width: 5em;
+    height: auto;
+}
+
+.review-container .comment textarea {
+    width: 100%;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.button {
+    padding: 0.3em;
+    font-size: 1em;
+    border-width: 1px;
+    border-radius: 0.3em;
+    box-shadow: none;
+}
+
+.btn-primary:disabled {
+    background: white;
+    color: #353535;
+    border-color: #353535;
+}
+
+.btn-outline {
+    background: rgba(0,0,0,0);
+}
+
+.btn-primary {
+    background: #00aeef;
+    border-color: #00aeef;
+    color: white;
+}
+
+.btn-danger {
+    border-color: red;
+    color: red;
+}
+

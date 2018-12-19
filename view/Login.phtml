@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="874166243343-koc18knumlrs0ili1c8i9r1es8ghv4hd.apps.googleusercontent.com">
+    <link rel="stylesheet" href="/static/login-register.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebas" type="text/css"/>
+</head>
+<body>
+    <?php require "view/Message.phtml"; ?>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                LOGIN
+            </div>
+            <form class="form-container" action="/login" method="post">
+                <div class="input-container">
+                    <div class="label"><label for="username">Username</label></div>
+                    <div class="input"><input type="text" name="username" id="username" placeholder="Username"></div>
+                </div>
+                <div class="input-container">
+                    <div class="label"><label for="password">Password</label></div>
+                    <div class="input"><input type="password" name="password" id="password" placeholder="Password"></div>
+                </div>
+                <div class="notice">
+                    <a href="/register"><u>Don't have an account?</u></a>
+                </div>
+                <div class="input-container">
+                    <button type="submit" id="submit" class="button-primary">LOGIN</button>
+                </div>
+            </form>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <form method="post" id="oauth" action="/oauth">
+                <input type="hidden" name="id" id="oauth_id">
+                <input type="hidden" name="name" id="oauth_name">
+                <input type="hidden" name="email" id="oauth_email">
+                <input type="hidden" name="img" id="oauth_img">
+            </form>
+        </div>
+    </div>
+</body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="/static/login.js"></script>
+<script src="/static/google-oauth.js"></script>
+</html>

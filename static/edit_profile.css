@@ -1,0 +1,155 @@
+.photos-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1.5em;
+    justify-content: space-between;
+
+}
+.circle {
+    width: 8em;
+    height: 8em;
+    border: solid 0.05em #000;
+
+}
+
+#profile-title {
+  flex-direction: column;
+  padding-top: 0.5em;
+  padding-bottom: 0.1em;
+  color: #ED6708;
+  font-family: Nunito;
+    font-weight: bolder;
+  font-size: 3em;
+  width: 90%;
+  margin-left: 5%;
+}
+
+#hidden-button {
+    display: none;
+}
+.form-container {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0.25em;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container label {
+    /* order: 1; */
+    flex-grow: 1;
+    flex-basis: 0;
+    margin-right: 0.5em;
+    text-align: left;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.input-container input {
+    order: 2;
+    flex-grow: 3;
+    flex-basis: 0;
+}
+.input-container input {
+    order: 2;
+    flex-grow: 3;
+    flex-basis: 0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.button-save {
+    background: #0295C6;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #0295C6;
+    padding: 0.3em;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+    font-size: 1em;
+    color: white;
+    border-radius: 0.3em;
+    align-self: flex-end;
+}
+
+.button-save:disabled {
+    color: #353535;
+    border-color: #353535;
+    background: white;
+}
+
+
+.button-back {
+    background: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    padding: 0.3em;
+    padding-left: 0.9em;
+    padding-right: 0.9em;
+    font-size: 1em;
+    color: red;
+    border-radius: 0.3em;
+    align-self:flex-start;
+}
+
+.photo-update {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin-left: 0.5em;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#file-name {
+    width: 100%;
+}
+
+.photo-form {
+    flex-direction: row;
+
+}
+
+textarea {
+  vertical-align: top;
+  flex-direction: row;
+  flex-grow: 3;
+  flex-basis: 0;
+  border-color: #dfdfdf;
+  border-width: thin;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75em;
+}
+
+#notif {
+    align-self: center;
+    background: hotpink;
+    color: #00aeef;
+    padding: 2em;
+    display: none;
+    width : 50%;
+}
+
+#address {
+    display: flex;
+    align-self: flex-start;
+}

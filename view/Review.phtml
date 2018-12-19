@@ -1,0 +1,66 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: gabriel
+ * Date: 23/10/18
+ * Time: 11:24
+ */
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/review.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+</head>
+
+<body>
+    <?php require "view/header.phtml"; ?>
+    <?php require "view/Message.phtml"; ?>
+    <?php $book = $order->book() ?>
+    <div class="review-container">
+        <div class="title">
+            <?php echo $book['name']; ?>
+            <div class="subtitle">
+                <?php echo $book['author']; ?>
+            </div>
+        </div>
+        <div class="book-icon">
+            <img src="<?php echo $book['imgsrc']; ?>">
+        </div>
+    </div>
+    <div class="review-container">
+        <div class="second-title">
+            Add Rating
+        </div>
+        <div class="stars">
+            <?php for ($i = 0; $i < 5; $i++) :?>
+                <img id="star-<?php echo $i;?>" src="/static/star-o.png">
+            <?php endfor;?>
+        </div>
+    </div>
+    <form action="/review/<?php echo $order->getId();?>" method="post">
+        <input hidden id="star-input" type="number" value="0" name="star">
+        <div class="review-container">
+            <div class="second-title">
+                Add Comment
+            </div>
+            <div class="comment">
+                <textarea rows="10" placeholder="Your comment here" id="comment" name="comment"></textarea>
+            </div>
+        </div>
+        <div class="review-container">
+            <div class="buttons">
+                <a href="/history"><button type="button" class="button btn-outline btn-danger" id="back">Back</button></a>
+                <button class="button btn-primary" id="submit" disabled type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+<script src="/static/review.js"></script>

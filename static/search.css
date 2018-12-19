@@ -1,0 +1,64 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  font-family: "Nunito";
+}
+
+.container {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+#book-search {
+  margin: 2em;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  margin: 1em 0;
+  width: 100%;
+  background-color: white;
+  border: 2px solid #898989;
+  border-radius: 8px;
+  padding: 0.5em;
+}
+
+input[type="text"][invalid] {
+  box-shadow: 0px 0px 5px red;
+}
+
+#book-search > div {
+  display: flex;
+  margin: 0.5em 0;
+}
+
+#book-search-submit {
+  width: 12em;
+  margin-left: auto;
+  padding: 0.6em;
+  background-color: #00aeef;
+  border: 0;
+  border-radius: 8px;
+  color: whitesmoke;
+  font-weight: bolder;
+}
+
+#book-search-submit:hover {
+  background-color: #f26600;
+}
+
+#book-search > h1 {
+  color: #f26600;
+  font-size: 3em;
+  margin: 0.3em 0;
+}

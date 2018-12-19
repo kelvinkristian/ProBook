@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/profile.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+</head>
+
+<body>
+    <?php require "view/header.phtml"; ?>
+    <div class="photos-container container">
+        <a href="/edit"><img src="static/pencil.png" alt="edit" class="edit-icon"></a>
+        <img src=<?php echo (substr($avatar, 0, 4) != "http" ? ('/static/' . $avatar) : $avatar);?> alt="avatar" class="circle">
+        <div class="name"> <?php echo $name;?> </div>
+    </div>
+    <div id="profile-title"> My Profile</div>
+    <div class="profile">
+        <div class="profile-container">
+            <div class="profile-cell icon">
+                <img src="/static/user.png" alt="user" class="profile_logo">
+            </div>
+            <div class="profile-cell label">Username</div>
+            <div class="profile-cell"><?php echo $username;?></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-cell icon">
+                <img src="/static/envelope.png" alt="email" class="profile_logo">
+            </div>
+            <div class="profile-cell label">Email</div>
+            <div class="profile-cell"><?php echo $email;?></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-cell icon">
+                <img src="/static/home.png" alt="address" class="profile_logo">
+            </div>
+            <div class="profile-cell label">Address</div>
+            <div class="profile-cell"><?php echo $address;?></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-cell icon">
+                <img src="/static/phone.png" alt="phone" class="profile_logo">
+            </div>
+            <div class="profile-cell label">Phone Number</div>
+            <div class="profile-cell"><?php echo $phone;?></div>
+        </div>
+        <div class="profile-container">
+            <div class="profile-cell icon">
+                <img src="/static/credit-card.png" alt="credit-card" class="profile_logo">
+            </div>
+            <div class="profile-cell label">Credit Card</div>
+            <div class="profile-cell"><?php echo $card_number?></div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: gabriel
+ * Date: 24/10/18
+ * Time: 21:18
+ */
+?>
+
+<?php $book = $order->book() ?>
+
+<div class="result-item">
+  <div class="result-item-top container">
+    <div class="result-item-image">
+        <img class="book-image" src="<?php echo $book['imgsrc']; ?>">
+    </div>
+    <div class="result-item-desc">
+      <div class="result-item-title">
+          <div class="title">
+              <?php echo $book['name']; ?>
+          </div>
+          <div class="detail">
+              <?php echo date("d F Y", strtotime($order->getCreatedAt())); ?><br>
+              Nomor Order : #<?php echo $order->getId(); ?>
+          </div>
+      </div>
+      <div class="result-item-rating">
+        Jumlah <?php echo $order->getAmount(); ?>
+      </div>
+      <div class="result-item-desc">
+          <?php
+            if ($order->getReviewId() == NULL) {
+                echo "Belum direview";
+            } else {
+                echo "Anda sudah memberikan review";
+            }
+          ?>
+      </div>
+    </div>
+  </div>
+    <?php if ($order->getReviewId() == NULL) : ?>
+  <div class="result-item-button">
+    <a href="/review/<?php echo $order->getId(); ?>">
+      <button class="button">Review</button>
+    </a>
+  </div>
+    <?php endif;?>
+</div>

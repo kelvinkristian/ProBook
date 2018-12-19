@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $book["name"] ?> | Pro - Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/header.css">
+    <link rel="stylesheet" type="text/css" href="/static/detail.css">
+    <link rel="stylesheet" type="text/css" href="/static/result.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+
+    <script type="text/javascript" src="/static/detail.js"></script>
+</head>
+
+<body>
+    <div class="container" id="overlay" style="display:none">
+      <div class="container" id="notification">
+        <img id="notif-close" src="/static/close.png">
+        <div id="notif-error" style="display:none"></div>
+        <div id="notif-content">
+          <img id="notif-checkmark" src="/static/checkmark.png">
+          <div>
+            <div>Pemesanan Berhasil!</div>
+            <div>Nomor Transaksi: <span id="order-count">3</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php require "view/header.phtml" ?>
+
+    <div class="description-container">
+      <div class="description-text-container">
+        <div id="book-id" style="display: none"><?php echo $book['id']?></div>
+        <div id="book-name"><?php echo $book["name"] ?></div>
+        <div id="writer-name"><?php echo $book["author"] ?></div>
+        <div id="description-text"><?php echo $book["description"] ?></div>
+      </div>
+      <div class="photo-container">
+        <img src="<?php echo $book['imgsrc'] ?>" alt="Cover" class="photo">
+        <div class="review-stars">
+          <?php
+          $star_count = floor($book["rating"]);
+          for($i = 0; $i < $star_count; $i++) {
+            echo "<img src='/static/star.png'>";
+          }
+          for($i = $star_count; $i < 5; $i++) {
+            echo "<img src='/static/star-o.png'>";
+          }
+          ?>
+        </div>
+        <div><?php echo $book["rating"] ?> / 5.0 </div>
+      </div>
+    </div>
+    <?php if ($book['price'] != 0):?>
+    <div class="section-container">
+      <div class="title"> Order</div>
+      <div class="order-number-container">
+        <div class="order-number"> Jumlah : </div>
+        <select id="order-select">
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+        </select>
+      </div>
+      <button id="orderbutton" class="button">Order</button>
+        <div class="otp-container">OTP : <input type="text" name="otp" id="otp"></div>
+    </div>
+    <?php endif;?>
+    <div class="section-container">
+      <div class="title">Reviews</div>
+      <?php
+      foreach(array_reverse($review) as $item) {
+        View::render("detail_review", $item);
+      }
+      if ($review == []) {
+          echo 'No one has reviewed this book. Wanna be the first?';
+      }
+      ?>
+    </div>
+    <div class="section-container">
+        <div class="title">People also bought...</div>
+        <?php if ($book_rec->vote != null) {
+            View::render('result_item', $book_rec);
+        } else {
+            View::render('result_item', $book);
+        }?>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<div class="review">
+    <img src="/static/<?php echo $avatar ?>" alt="Avatar" class="review-photo">
+    <div class="review-text-container">
+    <div class="username">@<?php echo $username ?></div>
+    <div class="review-text"><?php echo $comment ?></div>
+    </div>
+    <div class="rating-container">
+    <div class="rating-star">
+    <?php
+    for($i = 0; $i < $star; $i++) {
+        echo "<img src='/static/star.png'>";
+    }
+    for($i = $star; $i < 5; $i++) {
+        echo "<img src='/static/star-o.png'>";
+    }
+    ?>
+    </div>
+    <div class="rating-scale"><?php echo $star ?>/5.0</div>
+    </div>
+</div>

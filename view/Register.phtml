@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="874166243343-koc18knumlrs0ili1c8i9r1es8ghv4hd.apps.googleusercontent.com">
+    <link rel="stylesheet" href="/static/login-register.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/bebas" type="text/css"/>
+</head>
+<body>
+<?php include "view/Message.phtml"?>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            REGISTER
+        </div>
+        <form class="form-container" action="/register" method="post">
+            <div class="input-container">
+                <div class="label"><label for="name">Name</label></div>
+                <div class="input"><input type="text" name="name" id="name" placeholder="Tayo Little Bus"></div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="username">Username</label></div>
+                <div class="input">
+                    <input onchange="checkUsername()" type="text" name="username" id="username" placeholder="Tayo" class="check">
+                    <img class="check-mark" src="/static/check.png">
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="email">Email</label></div>
+                <div class="input">
+                    <input onchange="checkEmail()" class="check" type="email" name="email" id="email" placeholder="Email">
+                    <img class="check-mark" src="/static/check.png">
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="password">Password</label></div>
+                <div class="input"><input type="password" name="password" id="password" placeholder="Password"></div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="confirm">Confirm Password</label></div>
+                <div class="input"><input type="password" name="confirm" id="confirm" placeholder="Confirm Password"></div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="address">Address</label></div>
+                <div class="input"><textarea name="address" id="address" rows="4" placeholder="Jl. Sesuatu di sesuatu no segitu"></textarea></div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="phone">Phone Number</label></div>
+                <div class="input"><input type="text" name="phone" id="phone" placeholder="0838111111111"></div>
+            </div>
+            <div class="input-container">
+                <div class="label"><label for="card">Credit Card</label></div>
+                <div class="input"><input onchange="checkCard()" type="text" name="card" id="card" placeholder="card number"></div>
+            </div>
+            <div class="notice">
+                <a href="/login"><u>Already have an account?</u></a>
+            </div>
+            <div class="input-container">
+                <input disabled type="submit" id="submit" class="button-primary" value="REGISTER">
+            </div>
+        </form>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <form method="post" id="oauth" action="/oauth">
+            <input type="hidden" name="id" id="oauth_id">
+            <input type="hidden" name="name" id="oauth_name">
+            <input type="hidden" name="email" id="oauth_email">
+            <input type="hidden" name="img" id="oauth_img">
+        </form>
+        <br>
+    </div>
+</div>
+</body>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="/static/card-validation.js"></script>
+<script src="/static/register.js"></script>
+<script src="/static/google-oauth.js"></script>
+</html>

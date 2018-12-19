@@ -1,0 +1,41 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: gabriel
+ * Date: 24/10/18
+ * Time: 21:00
+ */
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>History</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/static/header.css">
+  <link rel="stylesheet" type="text/css" href="/static/result.css">
+    <link rel="stylesheet" type="text/css" href="/static/history.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" />
+</head>
+
+<body>
+  <?php require "view/header.phtml"; ?>
+  <section class="" id="result">
+    <div class="container" id="result-head">
+      <div id="result-head-title">
+        <h1>History</h1>
+      </div>
+    </div>
+    <div id="result-item-list">
+      <?php
+      foreach($orders as $item) {
+        View::render("history_item", ["order" => $item]);
+      }
+      ?>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.photos-container {
+    background: #13364a;
+    justify-content: center;
+    height: 14em;
+    flex-direction: column;
+
+}
+
+.edit-icon {
+    width: 2em;
+    float: right;
+}
+
+.circle {
+    width: 8em;
+    height: 8em;
+    border-radius: 50%;
+    border: solid 0.5em #eed848;
+    align-self: center;
+}
+
+.name {
+    color:#fdfdfd;
+    font-size: 2.5em;
+    align-self: center;
+}
+
+#profile-title {
+    flex-direction: column;
+    padding-top: 0.5em;
+    padding-left: 10%;
+    padding-bottom: 1em;
+    color: #e16e2c;
+    font-family: Nunito;
+    font-weight: bold;
+    font-size: 2em;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+}
+
+.profile-container {
+    flex-wrap: wrap;
+    display: flex;
+    margin: 0 0 1em 0;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.profile-cell {
+    text-align: left;
+    flex-grow: 6;
+    flex-basis: 0;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+
+.profile-cell.icon {
+    flex-basis: 0;
+    flex-grow: 0.5;
+    text-align: left;
+}
+
+.profile-cell.label {
+    flex-basis: 0;
+    flex-grow: 3;
+}
+
+.profile_logo {
+    width: 1.1em;
+    height: 1.1em;
+}
